@@ -147,8 +147,8 @@ let g:airline#extensions#tabline#enabled = 1
 if has('gui_running')
     colorscheme molokai
 	set guifont=Menlo:h12
-else
-    colorscheme Jellybeans
+elseif &t_Co == 256
+    colorscheme desert
 endif
 
 " Get rid of initial MacVim scheme

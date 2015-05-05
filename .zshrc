@@ -90,11 +90,18 @@ alias nl='npm list --depth=0'
 alias l='ls'
 alias p='python'
 alias pir='pip install -r requirements.txt'
-alias zc='mvim ~/.zshrc'
+alias zc='vim ~/.zshrc'
 
-# List dir. contents after change dir.
+# My functions
+## List dir. contents after change dir.
 function c () {
     cd "$@" && ls
+}
+
+# List contents after the zsh auto-cd
+function chpwd() {
+    emulate -L zsh
+    ls -a
 }
 
 # For Emma
