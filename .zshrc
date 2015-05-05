@@ -91,6 +91,7 @@ alias l='ls'
 alias p='python'
 alias pir='pip install -r requirements.txt'
 alias zc='vim ~/.zshrc'
+alias vc='vim ~/.vimrc'
 
 # My functions
 ## List dir. contents after change dir.
