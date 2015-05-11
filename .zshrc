@@ -93,6 +93,9 @@ alias pir='pip install -r requirements.txt'
 alias zc='vim ~/.zshrc'
 alias vc='vim ~/.vimrc'
 
+# Clear PYC files
+alias cleanpyc='find . -type f -name "*.pyc" -delete'
+
 # My functions
 ## List dir. contents after change dir.
 function c () {
