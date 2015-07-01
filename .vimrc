@@ -95,7 +95,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 
 " Improve Autocompletion for JS
-Plugin 'marijnh/tern_for_vim'
+" Plugin 'marijnh/tern_for_vim'
 
 " Auto close HTML tags
 Plugin 'vim-scripts/HTML-AutoCloseTag'
@@ -268,7 +268,7 @@ nmap <silent> <leader>n :new <Bar> only <CR>
 " Map <leader> + 'h' hide/view NERDTreeToggle
 nmap <silent> <leader>h :NERDTreeToggle <CR>
 
-" Map <leader> + 'q' to quit window
+" Map <leader> + 'q' to close a split
 nmap <silent> <leader>q :q <CR>
 
 " Delete a buffer and go to the previous one

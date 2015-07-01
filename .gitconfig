@@ -4,9 +4,8 @@
 [alias]
 	ci = commit
 	st = status
-	pom = push -u origin master
 	cim = commit -m
 	a = add
 	co = checkout
-	po = push -u origin
-	pop = push -u origin preview-app
+[init]
+    templatedir = /Users/kplunkett/
