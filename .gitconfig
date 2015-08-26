@@ -7,5 +7,3 @@
 	cim = commit -m
 	a = add
 	co = checkout
-[init]
-    templatedir = /Users/kplunkett/
