@@ -92,7 +92,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 
 " Vim Autocompletion
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Improve Autocompletion for JS
 " Plugin 'marijnh/tern_for_vim'

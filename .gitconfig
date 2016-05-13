@@ -7,3 +7,5 @@
 	cim = commit -m
 	a = add
 	co = checkout
+[push]
+	default = matching
