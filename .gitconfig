@@ -8,4 +8,4 @@
 	a = add
 	co = checkout
 [push]
-	default = matching
+	default = current
