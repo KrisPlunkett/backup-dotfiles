@@ -111,7 +111,7 @@ function chpwd() {
     ls -a
 }
 
-# Fix npm permissions for nvm
+# Fix npm permissions for nv
 function npmfix {
     n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
 }
@@ -130,5 +130,3 @@ function sizecss {
 function rmcss {
     find . -type f -name "*.css" -not -name "*sunset*" -not -name "*widgets*" -not -name "*spellchecker*" -not -name "*personalization*" -not -name "*codemirror*" -not -name "*jquery*" -not -name "*drag-and-drop-editor-refined-help*" -not -name "*trail-status*" -not -name "*refined-help*" -not -name "*alert-bars*" -not -name "*.min.css" -not -name "*trial-status*" -not -name "*social*" -not -name "*video-tag*" -not -name "*line-height*" -not -name "*/aap2/campaings/preview_iframe/*" -not -name "*survey-styles*" -not -name "*tiny_mce*" -delete
 }
-
-source /usr/local/opt/nvm/nvm.sh
