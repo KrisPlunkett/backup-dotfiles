@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/kplunkett/.oh-my-zsh
+export ZSH=/Users/bro153/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -111,7 +111,7 @@ function chpwd() {
     ls -a
 }
 
-# Fix npm permissions for nv
+# Fix npm permissions for nvm
 function npmfix {
     n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
 }
@@ -131,63 +131,4 @@ function rmcss {
     find . -type f -name "*.css" -not -name "*sunset*" -not -name "*widgets*" -not -name "*spellchecker*" -not -name "*personalization*" -not -name "*codemirror*" -not -name "*jquery*" -not -name "*drag-and-drop-editor-refined-help*" -not -name "*trail-status*" -not -name "*refined-help*" -not -name "*alert-bars*" -not -name "*.min.css" -not -name "*trial-status*" -not -name "*social*" -not -name "*video-tag*" -not -name "*line-height*" -not -name "*/aap2/campaings/preview_iframe/*" -not -name "*survey-styles*" -not -name "*tiny_mce*" -delete
 }
 
-# For Emma
-export WORKON_HOME=~/.virtualenvssource
-source /usr/local/bin/virtualenvwrapper.sh
-
-# For LocalEmma
-export LOCALEMMA_EMMA_BASE_DIR=~/Documents/emmadev/emma/
-export LOCALEMMA_EMMADMIN_BASE_DIR=~/Documents/emmadev/emmadmin/
-export LOCALEMMA_AUDIENCE_BASE_DIR=~/Documents/emmadev/audience/../
-
-#  LOCALEMMA_PATH
-export PATH="$PATH:/Users/kplunkett/Documents/emmadev/LocalEmma/bin"
-
-# LOCALEMMA lemma zsh completion
-fpath=(/Users/kplunkett/Documents/emmadev/LocalEmma/bin $fpath)
-
 source /usr/local/opt/nvm/nvm.sh
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
