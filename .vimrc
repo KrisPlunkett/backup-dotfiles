@@ -141,7 +141,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Set colorscheme
 " favorites: jellybeans, molokai, freshcut, mustang
-" colorscheme molokai
+colorscheme desert
 
 " Set the font stuff in MacVim
 if has('gui_running')
@@ -293,10 +293,10 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Maps Control + [ and Control + ] to move between buffers
-nmap <silent><c-]> :bNext <CR>
+" Maps Tab to move forward
+nmap <silent><c-]> :bnext <CR>
 nmap <silent><c-[> :bprevious <CR>
-
+"
 " Map Emmet leader to ','
 let g:user_emmet_leader_key=','
 

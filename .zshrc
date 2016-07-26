@@ -82,7 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # My Aliases
 alias g='git'
 alias cl='clear'
-alias s='pmset sleepnow'
 alias G='grunt'
 alias Gt='grunt test'
 alias Gb='grunt build'
@@ -135,6 +134,25 @@ function rmcss {
 export WORKON_HOME=~/.virtualenvssource
 source /usr/local/bin/virtualenvwrapper.sh
 
+# workflows cluster prod
+function workflows_mysql {
+    mysql -h p-aws-workflows-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
+}
+
+# aurora cluster prod
+function  aurora_mysql {
+    mysql -h d-aws-emmaplatform-aurora-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
+}
+
+# grep history
+function h {
+    history | grep $1
+}
+
+# Reload .zshrc
+function sz {
+    source ~/.zshrc
+}
 # For LocalEmma
 export LOCALEMMA_EMMA_BASE_DIR=~/Documents/emmadev/emma/
 export LOCALEMMA_EMMADMIN_BASE_DIR=~/Documents/emmadev/emmadmin/
@@ -149,6 +167,12 @@ fpath=(/Users/kplunkett/Documents/emmadev/LocalEmma/bin $fpath)
 source /usr/local/opt/nvm/nvm.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
 if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
     source "${ZDOTDIR:-$HOME}/.dinghyenv"
 fi
