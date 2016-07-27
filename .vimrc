@@ -141,9 +141,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Set colorscheme
 " favorites: jellybeans, molokai, freshcut, mustang
-colorscheme desert
-
-" Set the font stuff in MacVim
+" colorscheme molokai
 if has('gui_running')
     colorscheme molokai
 	set guifont=Menlo:h12
@@ -163,6 +161,10 @@ let g:netrw_liststyle=3
 " Set line number
 set number
 
+" Show spaces as dots and tabs as > dots
+set listchars=tab:>·,space:·
+set list
+"
 " Set gutter width
 set numberwidth=4
 
