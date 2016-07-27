@@ -215,3 +215,4 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
+export LOCALEMMA_BASE_DIR=/Users/kplunkett/Documents/emmadev/localemma/
