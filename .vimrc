@@ -144,16 +144,16 @@ let g:airline#extensions#tabline#enabled = 1
 " colorscheme molokai
 if has('gui_running')
     colorscheme molokai
+    set background=dark
 	set guifont=Menlo:h12
-elseif &t_Co == 256
+else
+    set t_Co=256
+    set background=light
     colorscheme desert
 endif
 
 " Get rid of initial MacVim scheme
 let macvim_skip_colorscheme = 1
-
-" Set the background to dark
-set background=dark
 
 " Set the file explorer to show up in a list view
 let g:netrw_liststyle=3
