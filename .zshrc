@@ -91,6 +91,7 @@ alias p='python'
 alias pir='pip install -r requirements.txt'
 alias zc='vim ~/.zshrc'
 alias vc='vim ~/.vimrc'
+alias tc='vim ~/.tmux.conf'
 
 # Use 'z' to jump around
 . `brew --prefix`/etc/profile.d/z.sh
@@ -153,6 +154,7 @@ function h {
 function sz {
     source ~/.zshrc
 }
+
 # For LocalEmma
 export LOCALEMMA_EMMA_BASE_DIR=~/Documents/emmadev/emma/
 export LOCALEMMA_EMMADMIN_BASE_DIR=~/Documents/emmadev/emmadmin/
@@ -216,3 +218,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
 export LOCALEMMA_BASE_DIR=/Users/kplunkett/Documents/emmadev/localemma/
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
