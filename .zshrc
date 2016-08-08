@@ -230,3 +230,21 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
