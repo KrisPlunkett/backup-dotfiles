@@ -92,12 +92,12 @@ alias pir='pip install -r requirements.txt'
 alias zc='vim ~/.zshrc'
 alias vc='vim ~/.vimrc'
 alias tc='vim ~/.tmux.conf'
+alias mr='mysql -uroot'
+alias cleanpyc='find . -type f -name "*.pyc" -delete'
+alias sz='source ~/.zshrc'
 
 # Use 'z' to jump around
 . `brew --prefix`/etc/profile.d/z.sh
-
-# Clear PYC files
-alias cleanpyc='find . -type f -name "*.pyc" -delete'
 
 # My functions
 ## List dir. contents after change dir.
@@ -114,11 +114,6 @@ function chpwd() {
 # Fix npm permissions for nv
 function npmfix {
     n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
-}
-
-# Local mysql server
-function mr {
-    mysql -uroot
 }
 
 # Get size all css in dir
@@ -148,11 +143,6 @@ function  aurora_mysql {
 # grep history
 function h {
     history | grep $1
-}
-
-# Reload .zshrc
-function sz {
-    source ~/.zshrc
 }
 
 # For LocalEmma
@@ -218,6 +208,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
 export LOCALEMMA_BASE_DIR=/Users/kplunkett/Documents/emmadev/localemma/
+if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
+    source "${ZDOTDIR:-$HOME}/.dinghyenv"
+fi
+if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
+fi
 if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
     source "${ZDOTDIR:-$HOME}/.dinghyenv"
 fi

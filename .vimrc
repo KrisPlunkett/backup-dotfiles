@@ -264,18 +264,21 @@ let mapleader=","
 " Set <leader> + '.' to edit my Vimrc
 nmap <silent> <leader>. :edit $MYVIMRC <CR>
 
+" Set <leader> + 's' to save
+nmap <silent> <leader>s :w <CR>
+
+" Map <leader> + 'q' to write and quit a split
+nmap <silent> <leader>q :wq <CR>
+
+" Delete a buffer and go to the previous one
+" instead of closing the split
+nmap <silent> <leader>d :bprevious<CR>:bdelete #<CR>
+
 " May <leader> + 'n' to create a new buffer in the active window
 nmap <silent> <leader>n :new <Bar> only <CR>
 
 " Map <leader> + 'h' hide/view NERDTreeToggle
 nmap <silent> <leader>h :NERDTreeToggle <CR>
-
-" Map <leader> + 'q' to close a split
-nmap <silent> <leader>q :q <CR>
-
-" Delete a buffer and go to the previous one
-" instead of closing the split
-nmap <silent> <leader>d :bprevious<CR>:bdelete #<CR>
 
 " Maps <leader> + window # to switch windows.
 " http://stackoverflow.com/questions/6403716/shortcut-for-moving-between-vim-windows
