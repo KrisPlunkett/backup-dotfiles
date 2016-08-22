@@ -126,6 +126,17 @@ function rmcss {
     find . -type f -name "*.css" -not -name "*sunset*" -not -name "*widgets*" -not -name "*spellchecker*" -not -name "*personalization*" -not -name "*codemirror*" -not -name "*jquery*" -not -name "*drag-and-drop-editor-refined-help*" -not -name "*trail-status*" -not -name "*refined-help*" -not -name "*alert-bars*" -not -name "*.min.css" -not -name "*trial-status*" -not -name "*social*" -not -name "*video-tag*" -not -name "*line-height*" -not -name "*/aap2/campaings/preview_iframe/*" -not -name "*survey-styles*" -not -name "*tiny_mce*" -delete
 }
 
+# Tmux ssh pane title
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        tmux rename-window "$(echo $* | cut -d . -f 1)"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
+
 # For Emma
 export WORKON_HOME=~/.virtualenvssource
 source /usr/local/bin/virtualenvwrapper.sh

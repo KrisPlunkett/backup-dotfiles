@@ -75,6 +75,9 @@ Plugin 'tpope/vim-fugitive'
 " Vim Airline for status bar
 Plugin 'bling/vim-airline'
 
+" Tmux Line
+Plugin 'edkolev/tmuxline.vim'
+
 " Mini Buffer
 " Plugin 'fholgado/minibufexpl.vim'
 
