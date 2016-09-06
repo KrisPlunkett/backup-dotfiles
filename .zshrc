@@ -95,6 +95,7 @@ alias tc='vim ~/.tmux.conf'
 alias mr='mysql -uroot'
 alias cleanpyc='find . -type f -name "*.pyc" -delete'
 alias sz='source ~/.zshrc'
+alias subl='open -a "Sublime Text.app"'
 
 # Use 'z' to jump around
 . `brew --prefix`/etc/profile.d/z.sh
@@ -136,6 +137,7 @@ ssh() {
         command ssh "$@"
     fi
 }
+
 
 # For Emma
 export WORKON_HOME=~/.virtualenvssource

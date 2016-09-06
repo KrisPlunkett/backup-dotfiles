@@ -87,6 +87,9 @@ Plugin 'edkolev/tmuxline.vim'
 " CtrlP File finder
 Plugin 'kien/ctrlp.vim'
 
+" Markdown Previewer
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 " -----------------
 " Autocompletion, etc.
 " ----------------
@@ -95,7 +98,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 
 " Vim Autocompletion
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Improve Autocompletion for JS
 " Plugin 'marijnh/tern_for_vim'
@@ -142,9 +145,11 @@ set laststatus=2
 " Show Airline buffers at the top
 let g:airline#extensions#tabline#enabled = 1
 
+" Use Control + M for previewing markdown
+let vim_markdown_preview_hotkey='<C-m>'
+
 " Set colorscheme
-" favorites: jellybeans, molokai, freshcut, mustang
-" colorscheme molokai
+" favorites: molokai, jellybeans, freshcut, mustang, peaksea, ir_black
 if has('gui_running')
     colorscheme molokai
     set background=dark
@@ -251,8 +256,8 @@ endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Highlight lines over 80 characters
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 " Remove enter save prompt
 set shortmess=aoOTt

@@ -1,8 +1,7 @@
 # My dot files
 ## Install
 
-- Clone this folder into your root
+- Clone this directory into your root
 
-- Modify the gitconfig appropriately
+- Symlink the necessary files out of this directory, into their appropriate destinations
 
-- Symlink the necessary files out of this backup folder, into your root
