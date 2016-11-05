@@ -58,13 +58,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -81,21 +74,18 @@ source $ZSH/oh-my-zsh.sh
 
 # My Aliases
 alias g='git'
-alias cl='clear'
 alias G='grunt'
 alias Gt='grunt test'
 alias Gb='grunt build'
 alias nl='npm list --depth=0'
-alias l='ls'
 alias p='python'
 alias pir='pip install -r requirements.txt'
-alias zc='vim ~/.zshrc'
-alias vc='vim ~/.vimrc'
-alias tc='vim ~/.tmux.conf'
-alias mr='mysql -uroot'
+alias zshrc='vim ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
+alias tmux_conf='vim ~/.tmux.conf'
+alias mysql_root='mysql -uroot'
 alias cleanpyc='find . -type f -name "*.pyc" -delete'
-alias sz='source ~/.zshrc'
-alias subl='open -a "Sublime Text.app"'
+alias source_zshrc='source ~/.zshrc'
 
 # Use 'z' to jump around
 . `brew --prefix`/etc/profile.d/z.sh
@@ -138,7 +128,6 @@ ssh() {
     fi
 }
 
-
 # For Emma
 export WORKON_HOME=~/.virtualenvssource
 source /usr/local/bin/virtualenvwrapper.sh
@@ -178,82 +167,4 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-export LOCALEMMA_BASE_DIR=/Users/kplunkett/Documents/emmadev/localemma/
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
+export PATH="/usr/local/sbin:$PATH"
