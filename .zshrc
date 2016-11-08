@@ -132,16 +132,6 @@ ssh() {
 export WORKON_HOME=~/.virtualenvssource
 source /usr/local/bin/virtualenvwrapper.sh
 
-# workflows cluster prod
-function workflows_mysql {
-    mysql -h p-aws-workflows-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
-}
-
-# aurora cluster prod
-function  aurora_mysql {
-    mysql -h d-aws-emmaplatform-aurora-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
-}
-
 # grep history
 function h {
     history | grep $1
