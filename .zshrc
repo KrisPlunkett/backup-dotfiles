@@ -58,13 +58,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -81,23 +74,21 @@ source $ZSH/oh-my-zsh.sh
 
 # My Aliases
 alias g='git'
-alias cl='clear'
-alias s='pmset sleepnow'
 alias G='grunt'
 alias Gt='grunt test'
 alias Gb='grunt build'
 alias nl='npm list --depth=0'
-alias l='ls'
 alias p='python'
 alias pir='pip install -r requirements.txt'
-alias zc='vim ~/.zshrc'
-alias vc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
+alias tmux_conf='vim ~/.tmux.conf'
+alias mysql_root='mysql -uroot'
+alias cleanpyc='find . -type f -name "*.pyc" -delete'
+alias source_zshrc='source ~/.zshrc'
 
 # Use 'z' to jump around
 . `brew --prefix`/etc/profile.d/z.sh
-
-# Clear PYC files
-alias cleanpyc='find . -type f -name "*.pyc" -delete'
 
 # My functions
 ## List dir. contents after change dir.
@@ -116,11 +107,6 @@ function npmfix {
     n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
 }
 
-# Local mysql server
-function mr {
-    mysql -uroot
-}
-
 # Get size all css in dir
 function sizecss {
     find . -type f -name '*.css'  -exec du -ch {} + | grep total$
@@ -131,9 +117,35 @@ function rmcss {
     find . -type f -name "*.css" -not -name "*sunset*" -not -name "*widgets*" -not -name "*spellchecker*" -not -name "*personalization*" -not -name "*codemirror*" -not -name "*jquery*" -not -name "*drag-and-drop-editor-refined-help*" -not -name "*trail-status*" -not -name "*refined-help*" -not -name "*alert-bars*" -not -name "*.min.css" -not -name "*trial-status*" -not -name "*social*" -not -name "*video-tag*" -not -name "*line-height*" -not -name "*/aap2/campaings/preview_iframe/*" -not -name "*survey-styles*" -not -name "*tiny_mce*" -delete
 }
 
+# Tmux ssh pane title
+ssh() {
+    if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        tmux rename-window "$(echo $* | cut -d . -f 1)"
+        command ssh "$@"
+        tmux set-window-option automatic-rename "on" 1>/dev/null
+    else
+        command ssh "$@"
+    fi
+}
+
 # For Emma
 export WORKON_HOME=~/.virtualenvssource
 source /usr/local/bin/virtualenvwrapper.sh
+
+# workflows cluster prod
+function workflows_mysql {
+    mysql -h p-aws-workflows-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
+}
+
+# aurora cluster prod
+function  aurora_mysql {
+    mysql -h d-aws-emmaplatform-aurora-cluster.cluster-cro7ojjod8ac.us-east-1.rds.amazonaws.com -u platform -p
+}
+
+# grep history
+function h {
+    history | grep $1
+}
 
 # For LocalEmma
 export LOCALEMMA_EMMA_BASE_DIR=~/Documents/emmadev/emma/
@@ -155,39 +167,4 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
     source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
 fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.dinghyenv" ]]; then
-    source "${ZDOTDIR:-$HOME}/.dinghyenv"
-fi
-if [[ -s "${ZDOTDIR:-$HOME}/.docker-commands.sh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.docker-commands.sh"
-fi
+export PATH="/usr/local/sbin:$PATH"
